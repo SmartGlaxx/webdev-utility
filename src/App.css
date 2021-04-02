@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
+:root{
+  --backgnd-color: linear-gradient(to bottom, #eef, #aaf);
+  --text-color: #236;
+  --input-bkgnd: #224;
+  --font-one: 1rem;
+  --font-two: 0.7rem;
+  --btn-backgnd: #baf;
+  --btn-color: #024;
+  --item-border: 1px solid #444;
+  --item-margin: 1rem auto;
+  --item-padding: 0.5rem 2.5rem;
+  --btn-padding: 0.8rem 3rem;
+  --border-radius: 0.5rem
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
+  color: var(--text-color);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* width: 100vw; */
+  min-height: 150vh;
+  justify-content:center;
+  text-align: center;
+  font-family: 'arial';
+  background: var( --backgnd-color);
+}
+.info{
+  color: var(--text-color);
+  font-size: var(--font-one);
+}
+.form-style{
+  width: 40vw;
+  min-width: 300px;
+  background: var(--input-backgnd);
+  color: var(--text-color);
+  border: var(--item-border);
+  outline: none;
+  display: block;
+  margin: var(--item-margin);
+  padding: var(--item-padding);
+  font-size: var(--font-one);
+  border-radius: var(--border-radius)
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-btn{
+  background: var(--btn-backgnd);
+  color: var(--btn-color);
+  padding: var(--btn-padding);
+  font-size: var(--font-one);
+  border-radius: var( --border-radius);
+  outline: none;
+  font-weight: 600
 }
