@@ -7,9 +7,10 @@ import {Link} from 'react-router-dom'
 
 
 const Container = styled.div`
-font-size: 1.4rem;
+font-size: 1rem;
 margin: 0 7%;
 max-width: 100%;
+min-height: 100vh;
 ${'' /* margin: 7.5vw; */}
 .colorbox{
   margin-top: 2rem;
@@ -53,13 +54,18 @@ ${'' /* margin: 7.5vw; */}
   font-size:0.9rem;
   color: #e34
 }
+@media screen and (max-width: 400px){
+  .hero-text{
+    font-size: 1.1rem
+  }
+}
 ` 
 
 const Home =()=>{
     return (
         <Container>
-       <h1>WEB DEV UTILITY APP</h1>
-       <h4>Get your color shadesa and placeholder texts on the go</h4>
+       <h1 className ='hero-text'>WEB DEV UTILITY APP</h1>
+       <h4>Get your color shades and placeholder texts on the go</h4>
        
         </Container>
     )

@@ -8,6 +8,7 @@ const Container = styled.div`
 font-size: 1.4rem;
 margin: 0 7%;
 max-width: 100%;
+min-height: 100vh;
 ${'' /* margin: 7.5vw; */}
 .colorbox{
   margin-top: 2rem;

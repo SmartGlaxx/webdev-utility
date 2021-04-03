@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Values from 'values.js'
 import styled from 'styled-components';
-import Footer from './footer'
+import Footer from './components/footer'
 import Loren from './pages/loren'
 import Colors from './pages/colors'
 import Home from './pages/home'
