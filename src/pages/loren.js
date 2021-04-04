@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import logo from '../logo.svg';
 import '../App.css';
-import Values from 'values.js'
 import styled from 'styled-components'
 import {Text} from '../assets/lorenData'
 import {FaRegCopy} from 'react-icons/fa'
@@ -13,6 +11,7 @@ max-width: 100%;
 min-height: 100vh;
 .lorenText{
   font-size: 14px;
+  text-align:left
 }
 ${'' /* margin: 7.5vw; */}
 .copiednote{
@@ -47,6 +46,7 @@ ${'' /* margin: 7.5vw; */}
   ${'' /* font-size: 1.4rem; */}
   color: green
 }
+
 .error{
   border: 1px solid red
 }
@@ -99,7 +99,7 @@ const Loren =()=>{
               <button className='form-btn' type='submit'>Generate</button>
           </form>
             <p className='errorMsg'>{error.show && error.msg}</p>
-              <div className='' >
+              <div className='boxx' >
               <span className='copy' onClick={()=>{
                 copiedFunc()
                 navigator.clipboard.writeText(lorenText)

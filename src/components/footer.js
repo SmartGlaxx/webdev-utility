@@ -4,8 +4,9 @@ import styled from 'styled-components';
 const FootDiv = styled.div`
     background: black;
     position: relative;
+    margin-top: 3rem;
     bottom: 0px;
-    height: 2rem;
+    height: 4rem;
     width: 100%;
     color: white;
     font-size: 0.9rem;    

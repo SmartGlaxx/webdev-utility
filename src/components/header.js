@@ -66,7 +66,7 @@ color: var(--text-color2);
     from{width: 0px}
     to{width: 100px}
 }
-@media screen and (max-width: 650px){
+@media screen and (max-width: 700px){
     .links{
         display:none
     }
@@ -98,6 +98,7 @@ const Header =()=>{
               <ul className='links'>
                 <NavLink to='/colors' className='link' activeClassName='active'>Color Shades Generator</NavLink>
                 <NavLink to='/loren' className='link' activeClassName='active'>Loren Ipsun Generator</NavLink>
+                <NavLink to='/photos' className='link' activeClassName='active'>Get Stock Photos</NavLink>
               </ul>
         </HeaderNav>
     )

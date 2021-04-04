@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import logo from '../logo.svg';
 import '../App.css';
 import Values from 'values.js'
 import styled from 'styled-components';
@@ -9,6 +8,7 @@ const Container = styled.div`
 font-size: 1.4rem;
 margin: 0 7%;
  max-width: 100vw;
+ min-height: 100vh;
 ${'' /* margin: 7.5vw; */}
 .colorbox{
   margin-top: 2rem;
@@ -94,17 +94,18 @@ ${'' /* margin: 7.5vw; */}
 
 @media screen and (max-width: 400px){
   .colorbox{
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    grid-gap: 0.5rem;
-
+    ${'' /* grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-gap: 0.5rem; */}
+    display: inline-block;
   }
+  
   .colorbox div{
     height: 80px;
-    width: 80px;
-
+    width: 60vw;
   }
   .colorbox .hexVal{
     font-size: 0.9rem;
+    	margin-top: 20%;
   }
   .colorbox span{
     font-size: 0.8rem
@@ -125,6 +126,9 @@ ${'' /* margin: 7.5vw; */}
     width: 60vw;
    justify-content: center;
     align-items: center
+  }
+  .colorbox .hexVal{
+    	margin-top: 40%;
   }
   .weight{
    ${'' /* margin-top: 50%; */}
@@ -177,7 +181,6 @@ function App() {
          const newRgb = rgb.join(',')
          return <div className='colorContainer'> 
          <div style={{backgroundColor: `#${hex}`, color: `${i > 10 ? 'white': 'black' }`}} >
-         {/* <span style={{color: `${i > 10 ? 'white': "black"}`}}>{weight}% {i> 10? 'darker': 'lighter'}</span> */}
          <span className='hexVal'>#{hex}</span>
           <span className='copy' onClick={()=>{
               copiedFunc() 

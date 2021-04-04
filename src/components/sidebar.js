@@ -82,8 +82,9 @@ const Sidebar =({mode,closeMenu})=>{
         }}><FaWindowClose/></span>
         <div>
             <ul className='links-list'>
-                <NavLink to='/colors' className='link' onClick={closeMenu} activeClassName='active'>Color Shades Generator</NavLink><br/>
-                <NavLink to='/loren' className='link' onClick={closeMenu} activeClassName='active'>Loren Ipsun Generator</NavLink>
+                <NavLink to='/colors' className='link' onClick={closeMenu} activeClassName='active'>Color Shades Generator</NavLink><br/><br/>
+                <NavLink to='/loren' className='link' onClick={closeMenu} activeClassName='active'>Loren Ipsun Generator</NavLink><br/><br/>
+                <NavLink to='/photos' className='link' onClick={closeMenu} activeClassName='active'>Get Stock Photos</NavLink>
               </ul>
         </div>
         </SideBar>
