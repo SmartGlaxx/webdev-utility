@@ -51,8 +51,9 @@ ${'' /* margin: 7.5vw; */}
   transition: all 0.5s
 }
 .copy:hover{
-  opacity: 0.3;
-  font-size: 1rem
+  opacity: 0.7;
+  font-size: 1rem;
+  color: green
 }
 
 .weight{
@@ -62,14 +63,15 @@ ${'' /* margin: 7.5vw; */}
    width: 100%
 }
 .copiednote{
-    color: navy;
+    color: green;
     font-size: 1rem;
     font-weight: 600;
     z-index: 10;
     top: 10rem;
     position: fixed;
     width: 200px;
-    background: rgb(150,150,150,0.8);
+    ${'' /* background: rgb(150,150,150,0.8); */}
+     background: rgb(230,230,240,0.9);
     padding: 1.5rem;
     transform: translateX(-50%);
     margin-left: 43%;
@@ -154,7 +156,7 @@ function App() {
       setCopied(true)
     const timer = setTimeout(() => {
           setCopied(false)
-      }, 5000);
+      }, 4000);
       
   }
 

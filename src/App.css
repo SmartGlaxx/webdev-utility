@@ -62,7 +62,7 @@ body{
     width: 90vw;
     height: 100vh;
     background: #ddd;
-    transition: all 1.5s ease-out;
+    transition: all 1s ease-out;
     transform: translate(-100%);
     background: black;
     z-index: 999;
