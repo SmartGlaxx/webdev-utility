@@ -130,6 +130,38 @@ const Container = styled.div`
     justify-content: center;
     align-iten: center
 }
+
+@media screen and (max-width: 590px){
+    .innerContainer{
+        grid-template-columns:  repeat(auto-fit, minmax(150px, 1fr));
+        grid-gap: 5px
+    }
+    .picture_box{
+    width: 150px;
+    }
+    .image{
+        width: 150px;
+        height: 150px
+    }
+    .form-search{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 360px){
+    .innerContainer{
+        display: block
+    }
+    .picture_box{
+    width: 100%;
+    }
+    .image{
+        width: 100%;
+        height: 100%
+    }
+    .form-search{
+        width: 100%;
+    }
+}
 `
 
 const Photos = ()=>{
@@ -189,7 +221,7 @@ const handleScroll = ()=>{
     const documentHeight = document.body.scrollHeight;
     const windowScrolled = window.scrollY
 
-    if((windowScrolled + windowHeight) == documentHeight){
+    if((windowScrolled + windowHeight) == (documentHeight-100)){
         setIsLoading(true)
         setPage(prev =>{
             return prev + 1
@@ -218,8 +250,10 @@ useEffect(()=>[
 return <Container id='itemContainer'>
          <h3>Access thousands of stock images free:</h3>
         <form onSubmit={handleSearch}>
+            <div className='search_box'>
             <input type='search' value={term} onChange={setTermFunc} className='form-search'/>
             <button className='search-btn' type='submit' ><FaSearch /></button>
+            </div>
         </form>
         <div className='innerContainer'>
        

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import '../App.css';
 import Values from 'values.js'
 import styled from 'styled-components';
-import {FaRegCopy} from 'react-icons/fa'
+import {FaRegCopy, FaSearch} from 'react-icons/fa'
 
 const Container = styled.div`
 font-size: 1.4rem;
@@ -172,9 +172,12 @@ function App() {
       <h3>Generate Shades for your Color:</h3>
       <p className='info'>Only 3 or 6 character hexadecimal values are valid.</p>
       {copied && <div className='copiednote'>Color copied to clipboard</div>}
+      <div className='form_box'>
         <input type='text' value={color} placeholder='#0256ff'
         onChange={(e)=>{setColor(e.target.value)}} className={`${error ? 'form-style error' : 'form-style' }`} />
+        {/* <input type ='text' value={color} placeholder='#0256ff' onChange={(e)=>{setColor(e.target.value)}} className='form-style'/> */}
         <button className='form-btn' type='submit'>Generate</button>
+        </div>
       </form>
       <p className='errorMsg'>{error && 'Invalid Input. Please refer to the placeholder text'}</p>
       <div className='colorbox'>

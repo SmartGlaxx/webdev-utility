@@ -5,6 +5,9 @@ const FootDiv = styled.div`
     background: black;
     position: relative;
     margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     bottom: 0px;
     height: 4rem;
     width: 100%;
@@ -22,7 +25,7 @@ const Footer = ()=>{
     return (
         <FootDiv>
             &copy; {new Date().getFullYear()}
-            <span className='name'>smartcodes</span>
+            <span className='name'>Developed by Smart Egbuchulem</span>
         </FootDiv>
     )
 }

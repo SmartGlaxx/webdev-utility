@@ -34,13 +34,13 @@ body{
   font-size: var(--font-one);
 }
 .form-style{
-  width: 30vw;
+  width: 90%;
   background: var(--input-backgnd);
   background: #ccc;
   color: var(--text-color);
   border: var(--item-border);
   outline: none;
-  display: block;
+  /* display: block; */
   margin: var(--item-margin);
   padding: var(--item-padding);
   font-size: var(--font-one);
@@ -49,10 +49,11 @@ body{
   border-bottom: 2px solid var(--text-color)
 }
 .form-search{
-  width: 30vw;
-  background: var(--input-backgnd);
+  width: 100%;
+  background: var( --backgnd-color);
   background: #ccc;
   color: var(--text-color);
+  color: #333;
   border: var(--item-border);
   outline: none;
   display: inline;
@@ -61,9 +62,11 @@ body{
   font-size: var(--font-one);
   border-radius: var(--border-radius);
   border: none;
+  
+}
+.form-search:focus{
   border-bottom: 2px solid var(--text-color)
 }
-
 .form-btn{
   background: var(--btn-backgnd);
   color: var(--btn-color);
@@ -71,8 +74,11 @@ body{
   font-size: var(--font-one);
   border-radius: var(--border-radius);
   outline: none;
-  /* text-transform: uppercase; */
-  font-weight: 600
+  float:right;
+ 
+  /* transform:translate(300px,15%); */
+  font-weight: 600;
+  /* position: absolute; */
 }
 .search-btn{
   border:none;
@@ -80,9 +86,20 @@ body{
   outline: none;
   position: absolute;
   font-size:1.3rem;
-  transform: translateY(40%)
-  /* width: 20px;
-  left: 20px */
+  transform: translate(-30px,40%);
+  /* right: 20px */
+}
+.form_box{
+  position:relative;
+  width: 50vw;
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+.search_box{
+  position:relative;
+  width: 50vw;
+ 
 }
 .sidebar {
     position: fixed;
@@ -100,10 +117,8 @@ body{
     transform: translate(0);
     display: block;
   }
-
-  @media screen and (max-width: 500px){
-    /* .form-style, .form-btn{
-        width: 80vw;
-    } */
-    
-  }
+@media screen and (max-width: 590px){
+  .form_box, .search_box{
+      width: 100%;
+   }
+}

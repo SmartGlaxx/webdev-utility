@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import '../App.css';
 import styled from 'styled-components'
 import {Text} from '../assets/lorenData'
-import {FaRegCopy} from 'react-icons/fa'
+import {FaRegCopy, FaSearch} from 'react-icons/fa'
 
 const Container = styled.div`
 font-size: 1.4rem;
@@ -94,9 +94,11 @@ const Loren =()=>{
             <h3>Generate Placeholer texts:</h3>
             <p className='info'>Enter number of paragraphs to generate.</p>
             {copied && <div className='copiednote'>Text copied to clipboard</div>}
-              <input type='number' value={number} className={`${error.show? 'form-style error':'form-style'}`}
+            <div className='form_box'>
+              <input type='search' value={number} className={`${error.show? 'form-style error':'form-style'}`}
                onChange={setNumValue}/>
               <button className='form-btn' type='submit'>Generate</button>
+              </div>
           </form>
             <p className='errorMsg'>{error.show && error.msg}</p>
               <div className='boxx' >
