@@ -9,6 +9,8 @@ font-size: 1.4rem;
 margin: 0 7%;
  max-width: 100vw;
  min-height: 100vh;
+ ${'' /* background: #3c40c6; */}
+ color: white;
 ${'' /* margin: 7.5vw; */}
 .colorbox{
   margin-top: 2rem;

@@ -1,7 +1,9 @@
 :root{
   /* --backgnd-color: linear-gradient(to bottom, #eef, #aaf); */
   --backgnd-color: #ddd;
-  --text-color: #4a47a3;
+  --backgnd-color:#3c40c6;
+  /* --text-color: #4a47a3; */
+  --text-color: white;
   --text-color2: #afacff;
   --input-bkgnd: #224;
   --font-one: 1rem;
@@ -34,6 +36,7 @@ body{
 .form-style{
   width: 30vw;
   background: var(--input-backgnd);
+  background: #ccc;
   color: var(--text-color);
   border: var(--item-border);
   outline: none;
@@ -41,7 +44,24 @@ body{
   margin: var(--item-margin);
   padding: var(--item-padding);
   font-size: var(--font-one);
-  border-radius: var(--border-radius)
+  border-radius: var(--border-radius);
+  border: none;
+  border-bottom: 2px solid var(--text-color)
+}
+.form-search{
+  width: 30vw;
+  background: var(--input-backgnd);
+  background: #ccc;
+  color: var(--text-color);
+  border: var(--item-border);
+  outline: none;
+  display: inline;
+  margin: var(--item-margin);
+  padding: var(--item-padding);
+  font-size: var(--font-one);
+  border-radius: var(--border-radius);
+  border: none;
+  border-bottom: 2px solid var(--text-color)
 }
 
 .form-btn{
@@ -54,7 +74,16 @@ body{
   /* text-transform: uppercase; */
   font-weight: 600
 }
-
+.search-btn{
+  border:none;
+  background: none;
+  outline: none;
+  position: absolute;
+  font-size:1.3rem;
+  transform: translateY(40%)
+  /* width: 20px;
+  left: 20px */
+}
 .sidebar {
     position: fixed;
     top: 0;

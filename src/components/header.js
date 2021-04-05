@@ -23,12 +23,14 @@ color: var(--text-color2);
 .heading: active{
     color: #ddd
 }
-.heading h2{
+.heading h3{
+    color:blue;
     position: absolute:
     left: 1rem;
 }
 .link{
     color: var(--text-color2);
+    color: blue;
     ${'' /* color: #ddd; */}
     text-decoration:none;
     transition: all 0.5s;
@@ -47,7 +49,7 @@ color: var(--text-color2);
     color: #ddd;
 }
 .active{
-    color: white;
+    color: #6a89cc;
     ${'' /* text-decoration: underline; */}
     transition: all 5s
 }
@@ -57,6 +59,7 @@ color: var(--text-color2);
     ${'' /* top: 0; */}
     height: 2px;
     width: 100px;
+    background: var(--text-color);
     background: red;
     transform: translate(-100%, 1rem);
     animation: anim1 1s

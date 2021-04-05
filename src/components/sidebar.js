@@ -22,7 +22,7 @@ const SideBar = styled.nav`
     0 73.5px 33.4px rgba(0, 0, 0, 0.05),
     0 176px 80px rgba(0, 0, 0, 0.07)
     ; */}
-
+    z-index: 2000;
 .links-list{
     text-decoration: none;
     height: 100vh;
