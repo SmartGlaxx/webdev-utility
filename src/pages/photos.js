@@ -168,7 +168,7 @@ const Photos = ()=>{
     const [name, setName] = useState('')
     const [data, setData] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-    const [page, setPage] = useState(1)
+    const [page, setPage] = useState(0)
     const [perPage, setPerPage] = useState(10)
     
     const [search, setSearch] = useState('')
@@ -187,16 +187,13 @@ const Photos = ()=>{
               if(page== 1){
                   setData(imagesResponse.data.results)
               }else{
-                  setData(prev => {
-                       console.log('page 0n 2')
+                  setData(prev => {   
                     return [...prev,...imagesResponse.data.results]
                 })
               }
-          
         }else{
             let imagesResponse = await Axios(`${url}${access_key}&page=${page}&per_page=${perPage}`).catch((error)=>{console.log(error)})
                setData(prev => {
-                    console.log('page 0n 3')
                     return [...prev, ...imagesResponse.data]
                 })
            
@@ -221,7 +218,7 @@ const handleScroll = ()=>{
     const documentHeight = document.body.scrollHeight;
     const windowScrolled = window.scrollY
 
-    if((windowScrolled + windowHeight) == (documentHeight-100)){
+    if((windowScrolled + windowHeight) >= (documentHeight-10)){
         setIsLoading(true)
         setPage(prev =>{
             return prev + 1
@@ -236,12 +233,13 @@ const handleScroll = ()=>{
 const handleSearch =(e)=>{
     e.preventDefault()
     setSearch(term)
+    setData([])
     setPage(1)
     // start to handle serach 
 }
 const setTermFunc = (e)=>{
     setTerm(e.target.value)
-    setPage(1)
+    // setPage(1)
 }
 useEffect(()=>[
         fetchImages()
@@ -262,7 +260,7 @@ return <Container id='itemContainer'>
                 return <Photo key={id} item={item}/>
             })}
         </div>
-        {isLoading && <Loader type="TailSpin" color="#4a47a3" height={50} width={50}
+        {isLoading && <Loader type="Rings" color="white" height={100} width={100}
         timeout={100000} />}
     </Container>
 }

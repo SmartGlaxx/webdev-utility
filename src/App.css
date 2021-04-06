@@ -38,6 +38,7 @@ body{
   background: var(--input-backgnd);
   background: #ccc;
   color: var(--text-color);
+    color: #333;
   border: var(--item-border);
   outline: none;
   /* display: block; */
