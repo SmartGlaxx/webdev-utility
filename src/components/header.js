@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import {NavLink, Link} from 'react-router-dom'
 import Sidebar, {Overlay} from './sidebar'
 import {FaBars} from 'react-icons/fa'
+import {ContextUser} from '../context'
 
 const HeaderNav = styled.nav`
 display:flex;
@@ -66,6 +67,44 @@ color: var(--text-color2);
     animation: anim1 1s
 }
 
+.copiednote{
+    z-index: 10000;
+    padding: 40vh 0;
+    height: 100vh; 
+    position: fixed;
+    top: 0; 
+    width: 100vw;
+    background: black;
+    fontSize: 2rem; 
+    animation: zoom1 1.5s ease-out
+}
+@keyframes zoom1{
+    from{font-size: 1rem}
+    to{font-size: 5rem; width: 100vw; height: 100vh}
+}
+.copiednote h3{
+    margin: 0
+}
+
+.copiedImgnote{
+    z-index: 10000;
+    padding: 40vh 0;
+    height: 100vh; 
+    position: fixed;
+    top: 0; 
+    width: 100vw;
+    opacity:0.8;
+    background: black;
+    fontSize: 2rem; 
+    animation: zoom2 1s ease-out;
+    ${'' /* background: var(--backgnd-color); */}
+    color: white;
+    text-transform: uppercase
+}
+@keyframes zoom2{
+    from{font-size: 1rem}
+    to{font-size: 3.5rem; width: 100vw; height: 100vh}
+}
 @keyframes anim1{
     from{width: 0px}
     to{width: 100px}
@@ -83,6 +122,9 @@ color: var(--text-color2);
 const Header =()=>{
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isOverlay, setIsOverlay] = useState(false)
+    const {copiedColor, hex, index, copiedImg} = ContextUser()
+
+
     const setMenu=()=>{
         setIsMenuOpen(true)
         setIsOverlay(true)
@@ -91,6 +133,8 @@ const Header =()=>{
         setIsMenuOpen(false)
         setIsOverlay(false)
     }
+     
+   
     return (
         <HeaderNav>
         {isOverlay && <Overlay closeMenu={closeMenu}/>}
@@ -98,6 +142,15 @@ const Header =()=>{
             <FaBars />
         </div>
         <Sidebar mode={isMenuOpen} closeMenu={closeMenu}/>
+       {copiedColor && <><div className='copiednote' style={{color: `${index > 10 ? 'white' : 'black'}`, background:`#${hex}`}}>
+      <h3>COPIED</h3>
+       <div>#{hex}</div>
+       </div>
+       </>}
+        {copiedImg && <><div className='copiedImgnote' >
+      <div>Image URL</div><div>copied</div>
+       </div>
+       </>}
         <Link className=' heading' to='/' activeClassName='active'><h3>WDU</h3></Link>
               <ul className='links'>
                 <NavLink to='/colors' className='link' activeClassName='active'>Color Shades Generator</NavLink>

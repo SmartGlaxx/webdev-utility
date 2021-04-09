@@ -3,6 +3,8 @@ import '../App.css';
 import Values from 'values.js'
 import styled from 'styled-components';
 import {FaRegCopy, FaSearch} from 'react-icons/fa'
+import {Color} from '../components/color'
+
 
 const Container = styled.div`
 font-size: 1.4rem;
@@ -65,22 +67,43 @@ ${'' /* margin: 7.5vw; */}
    width: 100%
 }
 .copiednote{
-    color: green;
+    ${'' /* color: green;
     font-size: 1rem;
     font-weight: 600;
     z-index: 10;
-    top: 10rem;
     position: fixed;
-    width: 200px;
-    ${'' /* background: rgb(150,150,150,0.8); */}
-     background: rgb(230,230,240,0.9);
-    padding: 1.5rem;
-    transform: translateX(-50%);
-    margin-left: 43%;
-    border-radius: 5px;
+    top: 0;
+    width: 50vw;
+    min-height: 100%;
+    margin: 0 25vw; */}
+     ${'' /* margin-top: 5vh; */}
+    ${'' /* background: rgb(230,230,240,0.9);
+    padding: 30%; */}
+    ${'' /* transform: translateX(-50%);
+    margin-left: 43%; */}
+    ${'' /* border-radius: 5px;
     display: flex;
     justify-content: center;
-    align-iten: center
+    align-iten: center;
+     box-sizing:border-box;
+    animation: zoom1 1s  */}
+}
+${'' /* @keyframes zoom1{
+    from{font-size: 1rem}
+    to{font-size: 5rem; width: 100vw; height: 100vh; 
+    margin: 0}
+} */}
+.box{
+  color:red;
+  display: block;
+  align-items:center;
+  justify-content:center;
+  position: absolute;
+  margin-top: 50vh; 
+  left: 0; 
+  z-ndex: 10000;
+  height: 100vh;
+  width: 100vw;
 }
 .colorContainer{
   background: white;
@@ -144,11 +167,12 @@ function App() {
   const [error, setError] = useState(false)
   const [color, setColor] = useState(``);
   const [list, setList] = useState(new Values('#edf').all(10))
-  const [copied, setCopied] = useState(false)
+  // const [copied, setCopied] = useState(false)
+  // const [hex, setHex] = useState(0)
 
   const generateColor=(e)=>{
     setError(false)
-    setCopied(false)
+    // setCopied(false)
     e.preventDefault()
     try{
       let newColor = new Values(color).all(10)
@@ -158,20 +182,21 @@ function App() {
     }    
   }
 
-  const copiedFunc=()=>{
-      setCopied(true)
-    const timer = setTimeout(() => {
-          setCopied(false)
-      }, 4000);
-      
-  }
+  // const copiedFunc=(hex)=>{
+  //     setHex(hex)
+  //     setCopied(true)
+  //   const timer = setTimeout(() => {
+  //         setCopied(false)
+  //     }, 4000);
+  //     // return ()=>clearTimeout(timer)
+  // }
 
   return (
     <Container>
       <form onSubmit={generateColor}>
       <h3>Generate Shades for your Color:</h3>
       <p className='info'>Only 3 or 6 character hexadecimal values are valid.</p>
-      {copied && <div className='copiednote'>Color copied to clipboard</div>}
+      {/* {copied && <div className='copiednote' style={{background: `$#{hex}`}}>Color copied to clipboard</div>} */}
       <div className='form_box'>
         <input type='text' value={color} placeholder='#0256ff'
         onChange={(e)=>{setColor(e.target.value)}} className={`${error ? 'form-style error' : 'form-style' }`} />
@@ -182,19 +207,7 @@ function App() {
       <p className='errorMsg'>{error && 'Invalid Input. Please refer to the placeholder text'}</p>
       <div className='colorbox'>
        {list.map((item, i) => {
-         const {hex, weight, rgb} = item
-         const newRgb = rgb.join(',')
-         return <div className='colorContainer'> 
-         <div style={{backgroundColor: `#${hex}`, color: `${i > 10 ? 'white': 'black' }`}} >
-         <span className='hexVal'>#{hex}</span>
-          <span className='copy' onClick={()=>{
-              copiedFunc() 
-            navigator.clipboard.writeText(hex)
-          }}><FaRegCopy /></span>
-         
-         </div>
-         <span style={{color: `${i > 10 ? 'white': "black"}`}} className='weight'>{weight}% {i> 10? 'darker': 'lighter'}</span>
-         </div>
+         return <Color key={i} item={item} i={i} />
        })}        
       </div>
     </Container>

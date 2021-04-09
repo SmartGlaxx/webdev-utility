@@ -128,7 +128,13 @@ const Container = styled.div`
     border-radius: 5px;
     display: flex;
     justify-content: center;
-    align-iten: center
+    align-iten: center;
+    animation: zoom1 2s linear
+}
+
+@keyframes zoom1{
+    from{width: 100vw}
+    to{width: 50vw}
 }
 
 @media screen and (max-width: 590px){
@@ -160,6 +166,9 @@ const Container = styled.div`
     }
     .form-search{
         width: 100%;
+    }
+    .bio{
+        display:none
     }
 }
 `
