@@ -199,7 +199,7 @@ const Home =()=>{
     return (
         <Container>
        <h1 className ='hero-text'>WEB DEV UTILITY APP</h1>
-       <h4 className='hero-text-2'>Color shades and Placeholder texts and Images</h4>
+       <h4 className='hero-text-2'>Color shades, Placeholder texts and Images</h4>
        <div className='main'>
        	<div className='inner-1'>
        		<div className='inner-2'>
@@ -207,9 +207,9 @@ const Home =()=>{
        		</div>
        	</div>
        	<div className='sub-text'>
-       		<div className='hero-subtexts subtext-1'>Generate shades for your favorite color. Compare shades to find the best.</div>
+       		<div className='hero-subtexts subtext-1'>Generate shades for your favorite color.</div>
        		<hr />
-       		<div className='hero-subtexts subtext-2'>Generate loren ipsun placeholder texts to give structure to your web design.</div>
+       		<div className='hero-subtexts subtext-2'>Generate placeholder texts for your web design.</div>
        		<hr/>
        		<div className='hero-subtexts subtext-3'>Search through hundreds of thousands of free stock images.</div>
        	</div>     	
