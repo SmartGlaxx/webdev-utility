@@ -4,14 +4,15 @@ import '../App.css';
 import Values from 'values.js'
 import styled from 'styled-components';
 import {Link} from 'react-router-dom'
-
+//import Footer from '../components/footer'
 
 const Container = styled.div`
 font-size: 1rem;
 max-width: 100%;
-min-height: calc(120vh - 2rem);
+min-height: 140vh;
 box-sizing: border-box;
 height:auto;
+position: relative;
 
 .colorbox{
   margin-top: 2rem;

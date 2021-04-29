@@ -4,7 +4,7 @@ import Values from 'values.js'
 import styled from 'styled-components';
 import {FaRegCopy, FaSearch} from 'react-icons/fa'
 import {Color} from '../components/color'
-
+import Footer from '../components/footer'
 
 const Container = styled.div`
 font-size: 1.4rem;
@@ -167,6 +167,7 @@ function App() {
          return <Color key={i} item={item} i={i} />
        })}        
       </div>
+      <Footer />
     </Container>
     
   );

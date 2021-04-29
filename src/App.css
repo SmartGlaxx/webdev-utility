@@ -28,7 +28,7 @@ body{
   text-align: center;
   font-family: 'Verdana','times';
   background: var( --backgnd-color);
-  
+  position: relative;
 }
 .info{
   color: var(--text-color);

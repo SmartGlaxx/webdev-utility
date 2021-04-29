@@ -165,7 +165,7 @@ const Header =()=>{
       <div>Image URL</div><div>copied</div>
        </div>
        </>}
-        <Link className=' heading' to='/' activeClassName='active'><h3>WDU</h3></Link>
+        <Link className=' heading' to='/' activeClassName='active'><h3>Smart's WDU</h3></Link>
               <ul className='links'>
                 <NavLink to='/colors' className='link' activeClassName='active'>Color Shades Generator</NavLink>
                 <NavLink to='/loren' className='link' activeClassName='active'>Loren Ipsun Generator</NavLink>
