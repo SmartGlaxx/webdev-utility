@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react';
 import '../App.css';
 import styled from 'styled-components'
 import {Text} from '../assets/lorenData'
-import {FaRegCopy, FaSearch} from 'react-icons/fa'
+import {FaRegCopy, FaSearch} from 'react-icons/fa';
+import {ContextUser} from '../context'
 
 const Container = styled.div`
 font-size: 1.4rem;
@@ -55,11 +56,10 @@ min-height: 100vh;
 const Loren =()=>{
   let [number, setNumber] = useState(1)
   const [lorenText, setLorenText] = useState([Text[0]])
-  const [copied, setCopied] = useState(false)
   const [error, setError] = useState({show:false, msg: ''})
+  const {textCopiedFunc} = ContextUser()
 
   const generateText=(e)=>{
-    setCopied(false)
     setError({show: false, msg: ''})
     e.preventDefault()
     let newText = [];
@@ -73,12 +73,6 @@ const Loren =()=>{
      newText = Text.slice(0,number);
    return setLorenText(newText)
   }
-  const copiedFunc =()=>{
-     setCopied(true)
-   setTimeout(()=>{
-      setCopied(false)
-    },4000)
-  }
 
   const setNumValue =(e)=>{
     setNumber(e.target.value)
@@ -89,7 +83,7 @@ const Loren =()=>{
            <form onSubmit={generateText}>
             <h3>Generate Placeholder texts:</h3>
             <p className='info'>Enter number of paragraphs to generate.</p>
-            {copied && <div className='copiednote'>Text copied to clipboard</div>}
+            
             <div className='form_box'>
               <input type='search' value={number} className={`${error.show? 'form-style error':'form-style'}`}
                onChange={setNumValue}/>
@@ -99,7 +93,7 @@ const Loren =()=>{
             <p className='errorMsg'>{error.show && error.msg}</p>
               <div className='boxx' >
               <span className='copy' onClick={()=>{
-                copiedFunc()
+                textCopiedFunc()
                 navigator.clipboard.writeText(lorenText)
               }}><FaRegCopy /></span>
                 {lorenText.map(textItem => {

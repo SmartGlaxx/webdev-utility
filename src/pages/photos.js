@@ -24,9 +24,6 @@ const Container = styled.div`
     }
 .picture_box{
     width: 250px;
-    ${'' /* padding: 0.5rem;
-    padding-bottom: 1rem; */}
-    ${'' /* background: blue; */}
     position:static;
     overflow: hidden;
     z-index:1000
@@ -74,7 +71,7 @@ const Container = styled.div`
 .linkBox{
     position: absolute;
     width: 100%;
-    ${'' /* background: rgba(0,0,0, 0.5) */}
+
 }
 .bio{
     font-size: 0.9rem;
@@ -119,12 +116,8 @@ const Container = styled.div`
     z-index:1;
     top: 1rem;
     position: absolute;
-    ${'' /* width: 200px; */}
-    ${'' /* background: rgb(150,150,150,0.8); */}
      background: rgb(10,10,10,0.5);
     padding: 1.5rem;
-    ${'' /* transform: translateX(-50%);
-    margin-left: 43%; */}
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -152,6 +145,9 @@ const Container = styled.div`
     .form-search{
         width: 100%;
     }
+    .bio{
+        display:none
+    }
 }
 @media screen and (max-width: 360px){
     .innerContainer{
@@ -166,9 +162,6 @@ const Container = styled.div`
     }
     .form-search{
         width: 100%;
-    }
-    .bio{
-        display:none
     }
 }
 `
@@ -187,11 +180,8 @@ const Photos = ()=>{
 
     const fetchImages = async()=>{
         setIsLoading(true)
-        //let imagesResponse = ;
-        if(search){
-            //`${searchUrl}${access_key}&per_page=${perPage}&page=${page}&query=${term}`
-            // https://api.unsplash.com/search/photos/?client_id=WTw-79X5QQiL2m0iEP0XcPZ80JWFkZ29lJa1v0O3_nA&query=cat
-            
+
+        if(search){           
              let imagesResponse = await Axios(`${searchUrl}${access_key}&query=${search}&per_page=${perPage}&page=${page}`).catch((error)=>{console.log(error)})
               if(page== 1){
                   setData(imagesResponse.data.results)
@@ -208,12 +198,7 @@ const Photos = ()=>{
            
             
         }
-         
-        // }else{
-        //     const imagesResponse = await Axios(fetchUrl).catch((error)=>{console.log(error)})
-        // }
-        //console.log(imagesResponse)
-  
+           
         setIsLoading(false)
     }
 
@@ -232,9 +217,7 @@ const handleScroll = ()=>{
         setPage(prev =>{
             return prev + 1
         }) 
-     
-        // fetchImages(`${url}${access_key}&page=${page}&per_page=${perPage}`)  
-        // setIsLoading(false)  
+
     }
 }
 
@@ -244,11 +227,10 @@ const handleSearch =(e)=>{
     setSearch(term)
     setData([])
     setPage(1)
-    // start to handle serach 
 }
 const setTermFunc = (e)=>{
     setTerm(e.target.value)
-    // setPage(1)
+
 }
 useEffect(()=>[
         fetchImages()

@@ -4,12 +4,11 @@ import styled from 'styled-components';
 const FootDiv = styled.div`
     background: black;
     position: relative;
-    margin-top: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
     bottom: 0px;
-    height: 4rem;
+    height: 10vh;
     width: 100%;
     color: white;
     font-size: 0.9rem;    

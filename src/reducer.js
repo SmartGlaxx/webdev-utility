@@ -14,7 +14,13 @@ const reducer = (state, action)=>{
         break;
         case 'UNSET_IMG_COPIED':
         return {...state, copiedImg: false}
-        break;       
+        break;  
+        case 'SET_TEXT_COPIED':
+        return {...state, copiedText: true}
+        break;
+        case 'UNSET_TEXT_COPIED':
+        return {...state, copiedText: false}
+        break;  
 
         default:
         return state

@@ -5,6 +5,7 @@ const AppContext = React.createContext()
 
 const initialState ={
     copiedColor : false,
+    copiedText : false,
     hex: 0,
     index: 0,
     copiedImg: false
@@ -28,9 +29,16 @@ const AppProvider = ({children})=>{
             dispatch({type: 'UNSET_IMG_COPIED'})
         },1000)
     }
-    // const [copied, setCopied] = useState(false)
+
+    const textCopiedFunc =()=>{
+        dispatch({type: 'SET_TEXT_COPIED'})
+        setTimeout(()=>{
+            dispatch({type: 'UNSET_TEXT_COPIED'})
+        },1000)
+    }
+    
     return <AppContext.Provider value={{
-...state, setCopied, setHexVal, setCopiedImg
+...state, setCopied, setHexVal, setCopiedImg, textCopiedFunc
     }}>
         {children}
     </AppContext.Provider>

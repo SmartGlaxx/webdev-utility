@@ -1,6 +1,6 @@
 :root{
   /* --backgnd-color: linear-gradient(to bottom, #eef, #aaf); */
-  --backgnd-color: #ddd;
+  /* --backgnd-color: #ddd; */
   --backgnd-color:#3c40c6;
   /* --text-color: #4a47a3; */
   --text-color: white;
@@ -26,7 +26,7 @@ body{
   min-height: 100vh;
   justify-content:center;
   text-align: center;
-  font-family: 'arial';
+  font-family: 'Verdana','times';
   background: var( --backgnd-color);
 }
 .info{

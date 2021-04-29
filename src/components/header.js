@@ -12,7 +12,7 @@ const HeaderNav = styled.nav`
 display:flex;
 justify-content:center;
 align-items:center;
-height: 4rem;
+height: 10vh;
 background: black;
 color: var(--text-color2);
 
@@ -31,7 +31,7 @@ color: var(--text-color2);
 }
 .link{
     color: var(--text-color2);
-    color: blue;
+    color: #66f;
     ${'' /* color: #ddd; */}
     text-decoration:none;
     transition: all 0.5s;
@@ -52,13 +52,11 @@ color: var(--text-color2);
 .active{
     color: #6a89cc;
     color:blue;
-    ${'' /* text-decoration: underline; */}
     transition: all 5s
 }
 .active::after{
     content: '';
     position: absolute;
-    ${'' /* top: 0; */}
     height: 2px;
     width: 100px;
     background: var(--text-color);
@@ -74,9 +72,21 @@ color: var(--text-color2);
     position: fixed;
     top: 0; 
     width: 100vw;
-    background: black;
     fontSize: 2rem; 
     animation: zoom1 1.5s ease-out
+}
+.copiednote2{
+    z-index: 10000;
+    padding: 40vh 0;
+    height: 100vh; 
+    position: fixed;
+    top: 0; 
+    width: 100vw;
+    fontSize: 2rem; 
+    animation: zoom1 1.5s ease-out
+}
+.undo{
+	display: none
 }
 @keyframes zoom1{
     from{font-size: 1rem}
@@ -122,7 +132,7 @@ color: var(--text-color2);
 const Header =()=>{
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isOverlay, setIsOverlay] = useState(false)
-    const {copiedColor, hex, index, copiedImg} = ContextUser()
+    const {copiedColor, copiedText, hex, index, copiedImg} = ContextUser()
 
 
     const setMenu=()=>{
@@ -134,7 +144,7 @@ const Header =()=>{
         setIsOverlay(false)
     }
      
-   
+   console.log(copiedText)
     return (
         <HeaderNav>
         {isOverlay && <Overlay closeMenu={closeMenu}/>}
@@ -145,6 +155,10 @@ const Header =()=>{
        {copiedColor && <><div className='copiednote' style={{color: `${index > 10 ? 'white' : 'black'}`, background:`#${hex}`}}>
       <h3>COPIED</h3>
        <div>#{hex}</div>
+       </div>
+       </>}
+       {copiedText && <><div className='copiednote' >
+      <h3>COPIED</h3>
        </div>
        </>}
         {copiedImg && <><div className='copiedImgnote' >

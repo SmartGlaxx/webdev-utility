@@ -11,9 +11,7 @@ font-size: 1.4rem;
 margin: 0 7%;
  max-width: 100vw;
  min-height: 100vh;
- ${'' /* background: #3c40c6; */}
  color: white;
-${'' /* margin: 7.5vw; */}
 .colorbox{
   margin-top: 2rem;
   max-width: 100vw;
@@ -66,33 +64,7 @@ ${'' /* margin: 7.5vw; */}
    transform:translateX(50%);
    width: 100%
 }
-.copiednote{
-    ${'' /* color: green;
-    font-size: 1rem;
-    font-weight: 600;
-    z-index: 10;
-    position: fixed;
-    top: 0;
-    width: 50vw;
-    min-height: 100%;
-    margin: 0 25vw; */}
-     ${'' /* margin-top: 5vh; */}
-    ${'' /* background: rgb(230,230,240,0.9);
-    padding: 30%; */}
-    ${'' /* transform: translateX(-50%);
-    margin-left: 43%; */}
-    ${'' /* border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-iten: center;
-     box-sizing:border-box;
-    animation: zoom1 1s  */}
-}
-${'' /* @keyframes zoom1{
-    from{font-size: 1rem}
-    to{font-size: 5rem; width: 100vw; height: 100vh; 
-    margin: 0}
-} */}
+
 .box{
   color:red;
   display: block;
@@ -119,8 +91,6 @@ ${'' /* @keyframes zoom1{
 
 @media screen and (max-width: 400px){
   .colorbox{
-    ${'' /* grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    grid-gap: 0.5rem; */}
     display: inline-block;
   }
   
@@ -156,7 +126,6 @@ ${'' /* @keyframes zoom1{
     	margin-top: 40%;
   }
   .weight{
-   ${'' /* margin-top: 50%; */}
    display: none
   }
 
@@ -167,12 +136,10 @@ function App() {
   const [error, setError] = useState(false)
   const [color, setColor] = useState(``);
   const [list, setList] = useState(new Values('#edf').all(10))
-  // const [copied, setCopied] = useState(false)
-  // const [hex, setHex] = useState(0)
+
 
   const generateColor=(e)=>{
     setError(false)
-    // setCopied(false)
     e.preventDefault()
     try{
       let newColor = new Values(color).all(10)
@@ -182,25 +149,15 @@ function App() {
     }    
   }
 
-  // const copiedFunc=(hex)=>{
-  //     setHex(hex)
-  //     setCopied(true)
-  //   const timer = setTimeout(() => {
-  //         setCopied(false)
-  //     }, 4000);
-  //     // return ()=>clearTimeout(timer)
-  // }
 
   return (
     <Container>
       <form onSubmit={generateColor}>
       <h3>Generate Shades for your Color:</h3>
       <p className='info'>Only 3 or 6 character hexadecimal values are valid.</p>
-      {/* {copied && <div className='copiednote' style={{background: `$#{hex}`}}>Color copied to clipboard</div>} */}
       <div className='form_box'>
         <input type='text' value={color} placeholder='#0256ff'
         onChange={(e)=>{setColor(e.target.value)}} className={`${error ? 'form-style error' : 'form-style' }`} />
-        {/* <input type ='text' value={color} placeholder='#0256ff' onChange={(e)=>{setColor(e.target.value)}} className='form-style'/> */}
         <button className='form-btn' type='submit'>Generate</button>
         </div>
       </form>
