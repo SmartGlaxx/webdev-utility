@@ -13,7 +13,6 @@ min-height: 100vh;
   font-size: 14px;
   text-align:left
 }
-${'' /* margin: 7.5vw; */}
 .copiednote{
   color: green;
   font-size: 1rem;
@@ -23,7 +22,6 @@ ${'' /* margin: 7.5vw; */}
   position: fixed;
   width: 200px;
   background: rgb(230,230,240,0.9);
-  ${'' /* background: white; */}
   padding: 1.5rem;
   transform: translateX(-50%);
   margin-left: 43%;
@@ -38,12 +36,10 @@ ${'' /* margin: 7.5vw; */}
   transition: all 0.5s;
   margin: 20px;
   display: inline-block;
-  ${'' /* position: absolute; */}
   box-sizing: content-box
 }
 .copy:hover{
   opacity: 0.7;
-  ${'' /* font-size: 1.4rem; */}
   color: green
 }
 
@@ -91,7 +87,7 @@ const Loren =()=>{
     return (
         <Container>
            <form onSubmit={generateText}>
-            <h3>Generate Placeholer texts:</h3>
+            <h3>Generate Placeholder texts:</h3>
             <p className='info'>Enter number of paragraphs to generate.</p>
             {copied && <div className='copiednote'>Text copied to clipboard</div>}
             <div className='form_box'>
