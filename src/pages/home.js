@@ -11,7 +11,7 @@ font-size: 1rem;
 margin: 0 7%;
 max-width: 100%;
 min-height: 100vh;
-${'' /* margin: 7.5vw; */}
+
 .colorbox{
   margin-top: 2rem;
   width: 85vw;
@@ -66,7 +66,9 @@ const Home =()=>{
         <Container>
        <h1 className ='hero-text'>WEB DEV UTILITY APP</h1>
        <h4>Get your color shades and placeholder texts on the go</h4>
-       
+       <div className='main'>
+       	<div style={{width: '80%', height: "60vh", transform: 'rotate(45deg)', background:"radialGradient: to left, 200, 140 220"}}></div>
+       </div>
         </Container>
     )
 }
