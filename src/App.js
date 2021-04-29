@@ -33,8 +33,8 @@ const App = ()=>{
           <Error />
         </Route>
       </Switch>
+       <Footer />
     </Router>
-    <Footer />
     </>
   )
 }
