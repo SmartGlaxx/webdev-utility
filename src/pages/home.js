@@ -9,7 +9,8 @@ import {Link} from 'react-router-dom'
 const Container = styled.div`
 font-size: 1rem;
 max-width: 100%;
-min-height: 140vh;
+min-height: 40vh;
+backgroundP: red;
 box-sizing: border-box;
 height:auto;
 position: relative;

@@ -55,7 +55,6 @@ export const Overlay =({closeMenu})=>{
     return (
         <SideBar onClick={closeMenu} >
         <div className='overlay'>
-        <h1>OVERLAY</h1>
         </div>
         </SideBar>
     )

@@ -167,7 +167,6 @@ function App() {
          return <Color key={i} item={item} i={i} />
        })}        
       </div>
-      <Footer />
     </Container>
     
   );

@@ -17,7 +17,12 @@ export const Color =({item, i})=>{
     return (
         <>
         <div className='colorContainer' style={{postion: 'relative'}}> 
-        <div style={{backgroundColor: `#${hex}`, color: `${i > 10 ? 'white': 'black' }`}} >
+        <div style={{backgroundColor: `#${hex}`, color: `${i > 10 ? 'white': 'black' }`}} 
+        onClick={()=>{
+            copiedFunc(hex, i) 
+        navigator.clipboard.writeText(hex)
+        }}
+         >
         <span className='hexVal'>#{hex}</span>
         <span className='copy' onClick={()=>{
             copiedFunc(hex, i) 
