@@ -17,9 +17,7 @@ const FootDiv = styled.div`
         color: #98f;
         margin-left: 10px
     }
-    @media screen and (orientation: landscape){
-    	height: 20vh
-    }
+ 
     
 `
 

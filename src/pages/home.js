@@ -120,7 +120,7 @@ position: relative;
 	top:8rem;
 	padding-left: 0.5rem;
 	text-align:left;
-	font-size: 0.9rem;
+	font-size: 1.1rem;
 
 }
 hr{
@@ -138,20 +138,22 @@ hr{
 .subtext-2{
 	top: 15rem;
 	animation: anim-w 2s;
-	width: 100%;
+	width:  90%;
+	margin-left: 10%
 }
 @keyframes anim-w{
 	from{margin-left: -100%}
-	to{margin-left: 0}
+	to{margin-left: 10%}
 }
 .subtext-3{
 	top: 20rem;
 	animation: anim-e 2s;
-	width: 100%;
+	width: 80%;
+	margin-left: 20%
 }
 @keyframes anim-e{
 	from{margin-left: -100%}
-	to{margin-left: 0}
+	to{margin-left: 20%}
 }
 @media screen and (min-width: 600px){
 	.inner-1{
