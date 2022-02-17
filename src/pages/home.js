@@ -200,7 +200,7 @@ hr{
 const Home =()=>{
     return (
         <Container>
-       <h1 className ='hero-text'>WEB DEV UTILITY APP</h1>
+       <h1 className ='hero-text'>Smart's WEB DEV UTILITY APP</h1>
        <h4 className='hero-text-2'>Color shades, Placeholder texts and Images</h4>
        <div className='main'>
        	<div className='inner-1'>
