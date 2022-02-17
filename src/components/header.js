@@ -52,7 +52,8 @@ color: var(--text-color2);
 .active{
     color: #6a89cc;
     color:blue;
-    transition: all 5s
+    transition: all 5s;
+    background : #fff
 }
 .active::after{
     content: '';
